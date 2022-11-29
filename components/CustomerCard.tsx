@@ -17,25 +17,43 @@ const CustomerCard = ({ email, name, userId }: Props) => {
   const tailwind = useTailwind();
   const navigation = useNavigation<CustomerScreenNavigationProp>();
   return (
-    <TouchableOpacity>
-      <Card containerStyle={tailwind("p-5 rounded-lg text-purple-200")}>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.navigate("MyModal", { name: name, userId: userId })
+      }
+    >
+      <Card
+        containerStyle={[
+          tailwind("p-5 rounded-lg border-0"),
+          { backgroundColor: "rgba(0, 0, 0, 0.75)" },
+        ]}
+      >
         <View>
-          <View>
-            <Text>{name}</Text>
-            <Text>ID: {userId}</Text>
-          </View>
-          <View>
-            <Text>{loading ? "loading..." : `${orders.length} x`}</Text>
-            <Icon
-              style={tailwind("mb-5 ml-auto")}
-              name="box"
-              type="entypo"
-              color="#1f2032"
-              size={50}
-            />
+          <View style={tailwind("flex-row justify-between")}>
+            <View>
+              <Text style={tailwind("text-2xl text-white font-bold")}>
+                {name}
+              </Text>
+              <Text style={[tailwind("text-sm text-white"), { color: "#fff" }]}>
+                ID: {userId}
+              </Text>
+            </View>
+            <View style={tailwind("flex-row items-center justify-end")}>
+              <Text style={tailwind("text-4xl font-bold text-white")}>
+                {loading ? "loading..." : `${orders.length}x`}
+              </Text>
+              <Icon
+                style={tailwind("mb-5 ml-auto")}
+                name="box"
+                type="entypo"
+                color="#fff"
+                size={50}
+              />
+            </View>
           </View>
         </View>
-        <Card.Divider />
+        <Card.Divider color="#fff" />
+        <Text style={tailwind("text-white")}>📧 {email}</Text>
       </Card>
     </TouchableOpacity>
   );
