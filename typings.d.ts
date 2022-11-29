@@ -32,7 +32,7 @@ type CustomerResponse = {
 
 type Order = {
   carrier: string;
-  creartedAt: string;
+  createdAt: string;
   shippingCost: number;
   trackingId: string;
   trackingItems: TrackingItem;

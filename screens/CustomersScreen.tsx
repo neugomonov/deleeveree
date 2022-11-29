@@ -11,12 +11,12 @@ import { ActivityIndicator, ScrollView, StatusBar, Text } from "react-native";
 import { useTailwind } from "tailwind-rn/dist";
 import CustomerCard from "../components/CustomerCard";
 import { GET_CUSTOMERS } from "../graphql/queries";
-import { RootSttackParamList } from "../navigator/RootNavigator";
+import { RootStackParamList } from "../navigator/RootNavigator";
 import { TabStackParamList } from "../navigator/TabNavigator";
 
 export type CustomerScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<TabStackParamList, "Customers">,
-  NativeStackNavigationProp<RootSttackParamList>
+  NativeStackNavigationProp<RootStackParamList>
 >;
 
 const CustomersScreen = () => {
@@ -42,12 +42,13 @@ const CustomersScreen = () => {
         containerStyle={tailwind("pt-5 pb-0 px-10")}
         style={tailwind("text-white")}
       />
-      <Text style={tailwind("text-purple-200")}>CustomersScreen</Text>
-      {data?.getCustomers.map(
-        ({ name: ID, value: { email, name } }: CustomerResponse) => (
-          <CustomerCard key={ID} email={email} name={name} userId={ID} />
+      {data?.getCustomers
+        .filter((customer: CustomerList) =>
+          customer.value.name.toLowerCase().includes(input.toLowerCase())
         )
-      )}
+        .map(({ name: ID, value: { email, name } }: CustomerResponse) => (
+          <CustomerCard key={ID} email={email} name={name} userId={ID} />
+        ))}
     </ScrollView>
   );
 };

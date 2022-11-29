@@ -11,7 +11,7 @@ import RootNavigator from "./navigator/RootNavigator";
 import utilities from "./tailwind.json";
 
 const client = new ApolloClient({
-  uri: "http://localhost:5001/api/plucking-scorpion",
+  uri: "http://127.0.0.1:5001/api/plucking-scorpion",
   cache: new InMemoryCache(),
 });
 

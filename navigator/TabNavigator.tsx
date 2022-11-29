@@ -28,15 +28,24 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarActiveTintColor: "#1f2032",
+        tabBarActiveTintColor: "#fff",
         tabBarInactiveTintColor: "gray",
+        tabBarStyle: {
+          backgroundColor: "#1f2032",
+          position: "absolute",
+          bottom: 5,
+          width: "90%",
+          borderTopWidth: 0,
+          borderRadius: 10,
+          marginHorizontal: "5%",
+        },
         tabBarIcon: ({ focused, color, size }) => {
           if (route.name === "Customers") {
             return (
               <Icon
                 name="users"
                 type="entypo"
-                color={focused ? "#1f2032" : "gray"}
+                color={focused ? "#fff" : "gray"}
               />
             );
           } else if (route.name === "Orders") {
@@ -44,7 +53,7 @@ const TabNavigator = () => {
               <Icon
                 name="box"
                 type="entypo"
-                color={focused ? "#000" : "gray"}
+                color={focused ? "#fff" : "gray"}
               />
             );
           }
