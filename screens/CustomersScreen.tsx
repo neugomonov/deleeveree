@@ -11,12 +11,12 @@ import { ActivityIndicator, ScrollView, StatusBar, Text } from "react-native";
 import { useTailwind } from "tailwind-rn/dist";
 import CustomerCard from "../components/CustomerCard";
 import { GET_CUSTOMERS } from "../graphql/queries";
-import { RootSttackParamList } from "../navigator/RootNavigator";
+import { RootStackParamList } from "../navigator/RootNavigator";
 import { TabStackParamList } from "../navigator/TabNavigator";
 
 export type CustomerScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<TabStackParamList, "Customers">,
-  NativeStackNavigationProp<RootSttackParamList>
+  NativeStackNavigationProp<RootStackParamList>
 >;
 
 const CustomersScreen = () => {
