@@ -29,7 +29,7 @@ const CustomerCard = ({ email, name, userId }: Props) => {
         ]}
       >
         <View>
-          <View style={tailwind("flex-row justify-between")}>
+          <View style={tailwind("flex-row justify-between overflow-hidden")}>
             <View>
               <Text style={tailwind("text-2xl text-white font-bold")}>
                 {name}
