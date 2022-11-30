@@ -7,7 +7,7 @@ import {
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Image, Input } from "@rneui/themed";
 import React, { useLayoutEffect, useState } from "react";
-import { ActivityIndicator, ScrollView, StatusBar, Text } from "react-native";
+import { ActivityIndicator, ScrollView, StatusBar, View } from "react-native";
 import { useTailwind } from "tailwind-rn/dist";
 import CustomerCard from "../components/CustomerCard";
 import { GET_CUSTOMERS } from "../graphql/queries";
@@ -29,26 +29,28 @@ const CustomersScreen = () => {
   }, []);
   return (
     <ScrollView style={{ backgroundColor: "#1f2032" }}>
-      <StatusBar animated={true} backgroundColor="#1f2032" />
-      <Image
-        source={require("../assets/customersScreenIllustration4.webp")}
-        style={tailwind("w-full h-96")}
-        PlaceholderContent={<ActivityIndicator />}
-      />
-      <Input
-        placeholder="Search by customer"
-        value={input}
-        onChangeText={setInput}
-        containerStyle={tailwind("pt-5 pb-0 px-10")}
-        style={tailwind("text-white")}
-      />
-      {data?.getCustomers
-        .filter((customer: CustomerList) =>
-          customer.value.name.toLowerCase().includes(input.toLowerCase())
-        )
-        .map(({ name: ID, value: { email, name } }: CustomerResponse) => (
-          <CustomerCard key={ID} email={email} name={name} userId={ID} />
-        ))}
+      <View style={tailwind("mb-16")}>
+        <StatusBar animated={true} backgroundColor="#1f2032" />
+        <Image
+          source={require("../assets/customersScreenIllustration4.webp")}
+          style={tailwind("w-full h-96")}
+          PlaceholderContent={<ActivityIndicator />}
+        />
+        <Input
+          placeholder="Search by customer"
+          value={input}
+          onChangeText={setInput}
+          containerStyle={tailwind("pt-5 pb-0 px-10")}
+          style={tailwind("text-white")}
+        />
+        {data?.getCustomers
+          .filter((customer: CustomerList) =>
+            customer.value.name.toLowerCase().includes(input.toLowerCase())
+          )
+          .map(({ name: ID, value: { email, name } }: CustomerResponse) => (
+            <CustomerCard key={ID} email={email} name={name} userId={ID} />
+          ))}
+      </View>
     </ScrollView>
   );
 };

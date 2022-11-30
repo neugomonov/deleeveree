@@ -1,9 +1,9 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
+import { Icon } from "@rneui/themed";
 import React, { useLayoutEffect } from "react";
 import CustomersScreen from "../screens/CustomersScreen";
 import OrdersScreen from "../screens/OrdersScreen";
-import { Icon } from "@rneui/themed";
 
 export type TabStackParamList = {
   Customers: undefined;
@@ -14,17 +14,14 @@ const Tab = createBottomTabNavigator<TabStackParamList>();
 
 const TabNavigator = () => {
   const navigation = useNavigation();
-
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
     });
-
     return () => {
       false;
     };
   }, []);
-
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
