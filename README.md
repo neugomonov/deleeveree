@@ -11,6 +11,8 @@ Deleeveree is a simple shipments managing & packages tracking app.
 <img src="screenshots/Orders.png" width="405"/>  
 <img src="screenshots/Deliveries.png" width="405"/>  
 <img src="screenshots/Order.png" width="405"/>
+<br>
+<img src="eas-update.svg"/>
 
 </div>
 
