@@ -54,12 +54,6 @@
 			"marginRight": "auto"
 		}
 	},
-	"my-5": {
-		"style": {
-			"marginTop": 20,
-			"marginBottom": 20
-		}
-	},
 	"mb-5": {
 		"style": {
 			"marginBottom": 20
@@ -75,39 +69,19 @@
 			"marginTop": -12
 		}
 	},
+	"mt-5": {
+		"style": {
+			"marginTop": 20
+		}
+	},
 	"ml-2": {
 		"style": {
 			"marginLeft": 8
 		}
 	},
-	"mb-52": {
-		"style": {
-			"marginBottom": 208
-		}
-	},
-	"mb-32": {
-		"style": {
-			"marginBottom": 128
-		}
-	},
-	"mb-10": {
-		"style": {
-			"marginBottom": 40
-		}
-	},
-	"mb-12": {
-		"style": {
-			"marginBottom": 48
-		}
-	},
 	"mb-16": {
 		"style": {
 			"marginBottom": 64
-		}
-	},
-	"mt-5": {
-		"style": {
-			"marginTop": 20
 		}
 	},
 	"block": {
@@ -237,11 +211,6 @@
 		"style": {
 			"paddingTop": 8,
 			"paddingBottom": 8
-		}
-	},
-	"pb-52": {
-		"style": {
-			"paddingBottom": 208
 		}
 	},
 	"pt-5": {
