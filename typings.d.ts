@@ -22,7 +22,7 @@ type Item = {
 };
 
 type OrderResponse = {
-  value: ORder;
+  value: Order;
 };
 
 type CustomerResponse = {
